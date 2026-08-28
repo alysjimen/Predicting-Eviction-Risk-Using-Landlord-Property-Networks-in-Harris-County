@@ -55,4 +55,5 @@ The graph is bipartite because, landlord nodes connect only to property nodes an
 Although ownership has a natural direction from landlord to property, a reverse computational relation is also added.
 The reverse edge does not imply that a property owns a landlord. It is included to permit bidirectional message passing within the GNN.
 
-The graph will be represented in PyTorch Geometric using HeteroData, which supports graphs containing multiple node types, edge types, and feature spaces.
+The graph will be represented in PyTorch Geometric using HeteroData, which supports graphs containing multiple node types, edge types, and feature spaces. For a landlord node, degree corresponds approximately to the number of connected properties.
+A second measure will be weighted degree, where connections are weighted by property exposure rather than simply counted.
