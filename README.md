@@ -40,3 +40,19 @@ Physical property characteristics were then derived from several HCAD files. The
 The extra_features file was converted into binary indicators describing whether HCAD recorded amenities or structural characteristics including swimming pools, pool/spa combinations, garages, carports, sheds, porches, outdoor kitchens, solar panels, foundation repairs, and cracked slabs. Multiple feature records belonging to the same property were collapsed into account-level indicators so that a property remained represented by a single row.
 
 Structural information from both structural_elem1 and structural_elem2 was incorporated because apartment and income-producing housing may appear in either file. These records were used to derive measures of building grade, condition/desirability/utility, physical condition, foundation characteristics, HVAC systems, exterior-wall composition, and structural complexity. Continuous adjustment values were retained separately for variables such as grade and CDU, while categorical or potentially multi-valued characteristics were represented using appropriate indicators and counts.
+
+##Initial Graph Representation
+
+The first version of the model represents the Harris County rental market as a directed *heterogeneous bipartite graph*. The graph contains two node types:
+
+Landlord nodes, representing property owners identified from HCAD ownership records.
+Property nodes, representing individual HCAD property accounts.
+
+The two node sets are connected through an ownership relation:
+
+The graph is bipartite because, landlord nodes connect only to property nodes and property nodes connect only to landlords. There are initially no property-to-property or landlord-to-landlord edges.
+
+Although ownership has a natural direction from landlord to property, a reverse computational relation is also added.
+The reverse edge does not imply that a property owns a landlord. It is included to permit bidirectional message passing within the GNN.
+
+The graph will be represented in PyTorch Geometric using HeteroData, which supports graphs containing multiple node types, edge types, and feature spaces.
