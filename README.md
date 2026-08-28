@@ -24,6 +24,11 @@ filing based on:
 
 1. Harris Central Appraisal District (HCAD) property appraisal data (https://hcad.org/pdata/pdata-property-downloads.html)
 2. Harris County Justice of the Peace eviction case records(https://jpwebsite.harriscountytx.gov/PublicExtracts/search.jsp) 
-3. Census/ACS neighborhood characteristics (planned)
+3. Census/ACS neighborhood characteristics (not yet applied)
 
+### Identification of Rental Properties
+
+Because HCAD is an appraisal database rather than a rental registry, rental status is not directly observed for every property. The study therefore constructs a reproducible indicator of likely rental housing using multiple HCAD fields. Properties are initially identified as rentals when HCAD provides explicit multifamily or rental-related evidence through building improvement type, property-use classification, or potential gross income category. This includes duplexes, triplexes, fourplexes, garden, mid-rise and high-rise apartments, manufactured-housing parks, subsidized housing, tax-credit housing, and other apartment structures. Properties such as single-family homes, condominiums, and townhouses are not assumed to be rentals solely because they are residential; these properties are subsequently evaluated using additional evidence including homestead exemptions, ownership type, and differences between owner mailing and property addresses.
+
+Rental identification is performed at the HCAD account-year level, while recognizing that a single appraisal account may contain many housing units. Consequently, the number of HCAD accounts classified as rentals is not expected to equal the Census renter-occupied housing share. As an external validity check, the resulting HCAD rental universe will instead be compared with American Community Survey estimates at the housing-unit level. HCAD unit counts and building characteristics will be used to estimate the number of rental units represented by identified properties, and the resulting totals will be compared with ACS estimates of renter-occupied housing units in Harris County.
 
